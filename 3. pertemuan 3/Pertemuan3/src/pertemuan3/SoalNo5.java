@@ -15,15 +15,10 @@ public class SoalNo5 {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         
+        String angka = input.replaceAll(" ","");
         
-        String[] angka = input.split(" ");
-        
-        int hasilGabungan = 0;
-        for (String str : angka) {
-            hasilGabungan += Integer.parseInt(str);
-        }
-
-        if ((999999- hasilGabungan) % 5 == 1) {
+        long gabunganCekPlat = (Long.parseLong(angka)-999999)%5;
+        if (gabunganCekPlat != 0) {
             System.out.println("berhenti");
         } else {
             System.out.println("jalan");
